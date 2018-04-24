@@ -1,17 +1,15 @@
 package edu.rosehulman.fisherds.linearlightsout
 
-import org.junit.Test
-
 import org.junit.Assert.*
 import org.junit.Before
-import org.junit.BeforeClass
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class LinearLightsOutGameUnitTest {
 
     lateinit var game: LinearLightsOutGame
 
@@ -83,6 +81,12 @@ class ExampleUnitTest {
         assertTrue(game.isLightOnAt(3))
         assertTrue(game.isLightOnAt(4))
         assertFalse(game.isLightOnAt(5))
+        assertFalse(game.isLightOnAt(6))
+    }
+
+    @Test
+    fun getLightInvalid() {
+        assertFalse(game.isLightOnAt(-1))
         assertFalse(game.isLightOnAt(6))
     }
 }

@@ -19,6 +19,9 @@ class LinearLightsOutGame {
     }
 
     fun isLightOnAt(index: Int): Boolean {
+        if (index < 0 || index >= lights.size) {
+            return false
+        }
         return lights[index]
     }
 

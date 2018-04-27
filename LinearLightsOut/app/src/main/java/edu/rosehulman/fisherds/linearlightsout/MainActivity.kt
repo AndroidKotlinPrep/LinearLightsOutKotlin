@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mLightButtons: Array<Button?>
     private lateinit var mGame: LinearLightsOutGame
 
+    private val BUTTON_STATES_KEY = "BUTTON_STATES_KEY"
+    private val NUM_TURNS_KEY = "NUM_TURNS_KEY"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         mLightButtons[4] = findViewById(R.id.button4)
         mLightButtons[5] = findViewById(R.id.button5)
         mLightButtons[6] = findViewById(R.id.button6)
+
+        if (savedInstanceState != null) {
+            mGame.lights = savedInstanceState.getBooleanArray(BUTTON_STATES_KEY)
+            mGame.numPresses = savedInstanceState.getInt(NUM_TURNS_KEY)
+        }
 
         for (i in mLightButtons.indices) {
             mLightButtons[i]?.setOnClickListener({
@@ -42,10 +50,11 @@ class MainActivity : AppCompatActivity() {
         updateView()
     }
 
+
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
-
-        // TODO: Save the state.
+        outState?.putInt(NUM_TURNS_KEY, mGame.numPresses)
+        outState?.putBooleanArray(BUTTON_STATES_KEY, mGame.lights)
     }
 
     private fun updateView() {

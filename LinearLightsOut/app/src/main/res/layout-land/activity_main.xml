@@ -13,61 +13,55 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/button0"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button1"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button2"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button3"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button4"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button5"
             style="@style/LightButton"
             android:text="0"/>
-
         <Button
             android:id="@+id/button6"
             style="@style/LightButton"
             android:text="0"/>
+
+        <Button
+            android:id="@+id/newGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gameButtons"
+            android:layout_alignRight="@id/gameButtons"
+            android:layout_marginLeft="10dp"
+            android:text="@string/new_game"/>
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/gameStateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/gameButtons"
         android:layout_centerHorizontal="true"
+        android:layout_above="@id/gameButtons"
         android:layout_marginBottom="10dp"
-        android:text="@string/label_start"
-        android:textSize="22sp"/>
+        android:textSize="22sp"
+        android:text="@string/label_start"/>
 
-    <Button
-        android:id="@+id/newGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/gameButtons"
-        android:layout_below="@id/gameButtons"
-        android:layout_marginTop="10dp"
-        android:onClick="pressedNewGame"
-        android:text="@string/new_game"/>
 
 </RelativeLayout>
